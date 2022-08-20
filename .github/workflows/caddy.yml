@@ -42,7 +42,7 @@ jobs:
           files: |
             ./release/*
 
-  build-uot:
+#  build-uot:
     runs-on: ubuntu-20.04
     steps:
       
