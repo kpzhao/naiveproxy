@@ -80,8 +80,8 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/naiveproxy:latest
             ${{ secrets.DOCKER_USERNAME }}/naiveproxy:${{ env.VERSION }}
-  push:
-    needs: [push,push-uot]
+  test:
+    needs: [push]
     runs-on: ubuntu-20.04
     steps:
       
