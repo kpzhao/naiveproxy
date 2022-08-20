@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - 'version/caddy.txt'
+  workflow_dispatch:
 
 name: caddy
 jobs:
