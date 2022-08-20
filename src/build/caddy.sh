@@ -39,4 +39,4 @@ mkdir -p release
 #		env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build HEAD --output release/caddy-linux-${ARCH} ${NAIVE}
 #	fi
 #done
-env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive --output release/caddy-linux-${ARCH}
+env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive --output release/caddy-linux-amd64
