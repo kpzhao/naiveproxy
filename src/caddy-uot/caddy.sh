@@ -37,7 +37,7 @@ fi
 CADDY_FILE="caddy-linux-uot-${ARCH}"
 
 echo "Downloading binary file: ${CADDY_FILE}"
-wget -O /usr/bin/caddy https://github.com/bolucat/peace/releases/latest/download/${CADDY_FILE} > /dev/null 2>&1
+wget -O /usr/bin/caddy https://github.com/kpzhao/naiveproxy/releases/latest/download/${CADDY_FILE} > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
     echo "Error: Failed to download binary file: ${CADDY_FILE}" && exit 1
