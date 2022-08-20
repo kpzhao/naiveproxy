@@ -24,18 +24,20 @@ NAIVE="--with github.com/caddyserver/forwardproxy=$PWD/forwardproxy"
 #PROTOCOLS="--with github.com/mastercactapus/caddy2-proxyprotocol=$PWD/caddy2-proxyprotocol"
 
 ARCHS=( amd64 )
-ARMS=( 6 7 )
+#ARMS=( 6 7 )
 
 mkdir -p release
 
-for ARCH in ${ARCHS[@]}; do
-	if [ "${ARCH}" == "arm" ]; then
-		for ARM in ${ARMS[@]}; do
-			echo "Building caddy-linux-${ARCH}32-v${ARM}"
-			env GOOS=linux GOARCH=${ARCH} GOARM=${ARM} $GOPATH/bin/xcaddy build HEAD --output release/caddy-linux-${ARCH}32-v${ARM} ${NAIVE}
-		done
-	else
-		echo "Building caddy-linux-${ARCH}"
-		env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build HEAD --output release/caddy-linux-${ARCH} ${NAIVE}
-	fi
-done
+#for ARCH in ${ARCHS[@]}; do
+#	if [ "${ARCH}" == "arm" ]; then
+#		for ARM in ${ARMS[@]}; do
+#			echo "Building caddy-linux-${ARCH}32-v${ARM}"
+#			env GOOS=linux GOARCH=${ARCH} GOARM=${ARM} $GOPATH/bin/xcaddy build HEAD --output release/caddy-linux-${ARCH}32-v${ARM} ${NAIVE}
+#		done
+#	else
+#		echo "Building caddy-linux-${ARCH}"
+#		env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build HEAD --output release/caddy-linux-${ARCH} ${NAIVE}
+#	fi
+#done
+env GOOS=linux GOARCH=${ARCH} $GOPATH/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive --output release/caddy-linux-${ARCH} ${NAIVE}
+
